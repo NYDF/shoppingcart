@@ -1,5 +1,6 @@
 import {Card} from "react-bootstrap"
 import { formatCurrency } from "../util/formatCurrency"
+import {Button} from "react-bootstrap"
 
 type StoreItemProps = {
     id: number
@@ -10,7 +11,7 @@ type StoreItemProps = {
 
 export function StoreItem({id, name, price, imgUrl}:
     StoreItemProps){
-        const quantity = 0
+        const quantity = 1
 
 
 
@@ -26,8 +27,19 @@ export function StoreItem({id, name, price, imgUrl}:
                 </Card.Title>
                 <div className="mt-auto">
                     {quantity === 0 ? (
-
-                    ) : null}
+                            <Button className="w-100">+Add To Cart</Button>
+                    ) : <div className="d-flex align-items-center flex-column" style={{gap: ".5rem"}}>
+                        <div className="d-flex align-items-center justify-content-center" style={{gap: ".5rem"}}>
+                            <Button>-</Button>
+                            <div>
+                                <span className="fs-3">
+                                    {quantity}
+                                </span> in cart
+                            </div>
+                            <Button>+</Button>
+                        </div>
+                            <Button variant="danger" size="sm">Remove</Button>
+                        </div>}
                 </div>
             </Card.Body>
         </Card>)
