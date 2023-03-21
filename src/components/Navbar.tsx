@@ -1,7 +1,7 @@
 import { Navbar as NavbarBs, Container, Nav, Button } from "react-bootstrap"
 import { NavLink } from "react-router-dom"
 
-export function Navbar() {
+export function Navbarr() {
     return <NavbarBs className='bg-white shadow-sm mb-3'>
         <Container>
             <Nav className="me-auto">
