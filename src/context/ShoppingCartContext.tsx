@@ -5,25 +5,25 @@ import { useLocalStorage } from "../hooks/useLocalStorage";
 
 type ShoppingCartProviderProps = {
     children: ReactNode
-}
+  }
 
-type ShoppingCartContext = {
-    getItemQuantity: (id: number) => Number
+  type CartItem = {
+    id: number
+    quantity: number
+  }
+
+  type ShoppingCartContext = {
+    openCart: () => void
+    closeCart: () => void
+    getItemQuantity: (id: number) => number
     increaseCartQuantity: (id: number) => void
     decreaseCartQuantity: (id: number) => void
     removeFromCart: (id: number) => void
-    openCart: ()=> void
-    closeCart: ()=> void
     cartQuantity: number
     cartItems: CartItem[]
-}
+  }
 
-type CartItem = {
-    id: number
-    quantity: number
-}
-
-const ShoppingCartContext = createContext({} as ShoppingCartContext)
+  const ShoppingCartContext = createContext({} as ShoppingCartContext)
 
 export function useShoppingCart() {
     return useContext(ShoppingCartContext)
