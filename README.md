@@ -1,2 +1,2 @@
 # shoppingcart
-react in frontend
+react and typescript in frontend
